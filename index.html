@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We're Getting Married!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-pretext">Together with their families</p>
+      <h1 class="couple-names">Jane &amp; John</h1>
+      <p class="hero-subtext">Request the pleasure of your company at their wedding</p>
+      <div class="wedding-date">
+        <span class="date-line">Saturday, September 12, 2026</span>
+      </div>
+      <div id="countdown" class="countdown"></div>
+      <a href="#details" class="btn">View Details</a>
+    </div>
+  </section>
+
+  <!-- Event Details -->
+  <section id="details" class="section">
+    <div class="container">
+      <h2>Wedding Details</h2>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-icon">&#128338;</div>
+          <h3>Ceremony</h3>
+          <p class="detail-time">3:00 PM</p>
+          <p class="detail-venue">The Garden Chapel</p>
+          <p class="detail-address">123 Blossom Lane<br>Austin, TX 78701</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-link">View Map &rarr;</a>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">&#127881;</div>
+          <h3>Reception</h3>
+          <p class="detail-time">5:00 PM</p>
+          <p class="detail-venue">Lakeside Pavilion</p>
+          <p class="detail-address">456 Waterfront Dr<br>Austin, TX 78702</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-link">View Map &rarr;</a>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">&#127870;</div>
+          <h3>Dinner &amp; Dancing</h3>
+          <p class="detail-time">6:30 PM</p>
+          <p class="detail-venue">Lakeside Pavilion</p>
+          <p class="detail-address">Dinner, toasts, and dancing<br>until the stars come out</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section id="gallery" class="section section-alt">
+    <div class="container">
+      <h2>Our Story in Photos</h2>
+      <p class="section-subtitle">A few of our favorite moments together</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background-color: #d4b8a0;">
+          <div class="gallery-placeholder">Photo 1</div>
+        </div>
+        <div class="gallery-item" style="background-color: #a0c4b8;">
+          <div class="gallery-placeholder">Photo 2</div>
+        </div>
+        <div class="gallery-item" style="background-color: #b8a0c4;">
+          <div class="gallery-placeholder">Photo 3</div>
+        </div>
+        <div class="gallery-item" style="background-color: #c4b8a0;">
+          <div class="gallery-placeholder">Photo 4</div>
+        </div>
+        <div class="gallery-item" style="background-color: #a0b8c4;">
+          <div class="gallery-placeholder">Photo 5</div>
+        </div>
+        <div class="gallery-item" style="background-color: #c4a0b8;">
+          <div class="gallery-placeholder">Photo 6</div>
+        </div>
+      </div>
+      <p class="gallery-note">Replace these placeholders with your own photos by editing <code>index.html</code></p>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="section">
+    <div class="container container-narrow">
+      <h2>RSVP</h2>
+      <p class="section-subtitle">Kindly respond by August 1, 2026</p>
+      <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <select id="guests" name="guests">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Will you attend?</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="attending" value="yes" required>
+              <span>Joyfully accepts</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attending" value="no">
+              <span>Regretfully declines</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dietary">Dietary Restrictions</label>
+          <input type="text" id="dietary" name="dietary" placeholder="e.g., vegetarian, gluten-free">
+        </div>
+        <div class="form-group">
+          <label for="message">Message for the Couple</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-full">Send RSVP</button>
+      </form>
+      <div id="rsvp-success" class="rsvp-success hidden">
+        <div class="success-icon">&#10003;</div>
+        <h3>Thank you!</h3>
+        <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel & Accommodations -->
+  <section id="travel" class="section section-alt">
+    <div class="container">
+      <h2>Travel &amp; Accommodations</h2>
+      <p class="section-subtitle">Everything you need for your visit</p>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-icon">&#9992;</div>
+          <h3>Getting There</h3>
+          <p>The nearest airport is Austin-Bergstrom International (AUS), about 20 minutes from the venue.</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">&#127976;</div>
+          <h3>Where to Stay</h3>
+          <p><strong>Hotel Magnolia</strong><br>
+          We've reserved a room block at a special rate. Use code <em>JANEANDJOHN</em> when booking.</p>
+          <a href="#" class="map-link">Book Room &rarr;</a>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">&#128663;</div>
+          <h3>Getting Around</h3>
+          <p>Ride-share services are widely available. Complimentary shuttle service will run between the hotel and venue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container container-narrow">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is the dress code?</summary>
+          <p>Semi-formal / cocktail attire. Think sundresses, slacks, and button-downs. Leave the stilettos at home &mdash; the ceremony is on grass!</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I bring a plus one?</summary>
+          <p>We've done our best to accommodate plus ones. Please check your invitation or reach out to us if you're unsure.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are kids welcome?</summary>
+          <p>While we love your little ones, this will be an adults-only celebration. We hope you enjoy the evening off!</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will there be parking?</summary>
+          <p>Yes! Free parking is available at both the ceremony and reception venues.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I have dietary restrictions?</summary>
+          <p>Please note any dietary restrictions in your RSVP and we'll make sure you're taken care of.</p>
+        </details>
+        <details class="faq-item">
+          <summary>When is the RSVP deadline?</summary>
+          <p>Please RSVP by August 1, 2026 so we can finalize our headcount.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-names">Jane &amp; John</p>
+      <p class="footer-date">September 12, 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
