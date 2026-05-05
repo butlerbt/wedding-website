@@ -50,16 +50,61 @@ python3 -m http.server 8000
    - For subdomain (`www.janeandjohn.com`): Add a `CNAME` record pointing to `YOUR_USERNAME.github.io`
 4. Check "Enforce HTTPS" in the Pages settings
 
-## Setup RSVP Form (Free)
+## Setup RSVP Form with Google Sheets (Free)
 
-The RSVP form uses [Formspree](https://formspree.io) (free for up to 50 submissions/month):
+RSVP responses are sent to a Google Sheet via a Google Apps Script. Here's how to set it up:
 
-1. Sign up at https://formspree.io
-2. Create a new form
-3. Copy your form endpoint (looks like `https://formspree.io/f/xabcdefg`)
-4. In `index.html`, replace `YOUR_FORM_ID` in the form action with your ID
+### 1. Create the Google Sheet
 
-**Alternative:** Use [Google Forms](https://forms.google.com) and embed or link to it instead.
+1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet
+2. Name it "Wedding RSVPs"
+3. In **Row 1**, add these headers (must match exactly):
+
+   | A | B | C | D | E | F | G |
+   |---|---|---|---|---|---|---|
+   | Timestamp | Name | Email | Guests | Attending | Dietary | Message |
+
+### 2. Create the Apps Script
+
+1. In your Google Sheet, go to **Extensions → Apps Script**
+2. Delete any existing code and paste this:
+
+```javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var p = e.parameter;
+
+  sheet.appendRow([
+    new Date(),
+    p.name,
+    p.email,
+    p.guests,
+    p.attending,
+    p.dietary,
+    p.message
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'ok' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+3. Click **Deploy → New deployment**
+4. Choose type: **Web app**
+5. Set "Execute as" to **Me** and "Who has access" to **Anyone**
+6. Click **Deploy** and authorize when prompted
+7. Copy the **Web app URL**
+
+### 3. Connect it to your site
+
+In `script.js`, replace `YOUR_GOOGLE_SCRIPT_URL` with the URL you copied:
+
+```javascript
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ABC.../exec';
+```
+
+That's it! Every RSVP submission will add a new row to your Google Sheet.
 
 ## Customize
 

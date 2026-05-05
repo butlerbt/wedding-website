@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Countdown Timer ──
   // Change this date to match your wedding
-  const weddingDate = new Date('2026-09-12T15:00:00');
+  const weddingDate = new Date('2027-01-24T15:00:00');
 
   function updateCountdown() {
     const now = new Date();
@@ -49,34 +49,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── RSVP Form ──
+  // Replace this URL with your Google Apps Script web app URL (see README)
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwPASsFjzG5uUaQ_BjnmSB3ccp09aT_g6RjD5VxVUBWXsltHxIeRFsLw2oSj3IeRw3KKQ/exec';
+
   const form = document.getElementById('rsvp-form');
   const successEl = document.getElementById('rsvp-success');
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+    const iframe = document.createElement('iframe');
+    iframe.name = 'rsvp-iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
 
-      if (response.ok) {
-        form.classList.add('hidden');
-        successEl.classList.remove('hidden');
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch {
-      btn.textContent = 'Send RSVP';
-      btn.disabled = false;
-      alert('Something went wrong. Please try again or contact us directly.');
+    const hiddenForm = document.createElement('form');
+    hiddenForm.method = 'POST';
+    hiddenForm.action = GOOGLE_SCRIPT_URL;
+    hiddenForm.target = 'rsvp-iframe';
+    hiddenForm.style.display = 'none';
+
+    const fields = { name: form.name.value, email: form.email.value,
+      guests: form.guests.value, attending: form.attending.value,
+      dietary: form.dietary.value, message: form.message.value };
+
+    for (const [key, val] of Object.entries(fields)) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = val;
+      hiddenForm.appendChild(input);
     }
+
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
+
+    setTimeout(() => {
+      form.classList.add('hidden');
+      successEl.classList.remove('hidden');
+      hiddenForm.remove();
+      iframe.remove();
+    }, 2000);
   });
 
   // ── Scroll reveal animations ──

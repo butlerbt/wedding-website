@@ -400,13 +400,13 @@ h2 {
   accent-color: var(--color-accent);
 }
 
+.hidden {
+  display: none !important;
+}
+
 .rsvp-success {
   text-align: center;
   padding: 3rem 0;
-}
-
-.rsvp-success.hidden {
-  display: none;
 }
 
 .success-icon {
