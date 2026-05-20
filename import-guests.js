@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 //
-// Import guest list from a CSV and generate SHA-256 hashes grouped by invite group.
+// Import guest list from a CSV and generate lookup data grouped by invite group.
 //
 // Usage:
 //   node import-guests.js guests.csv
@@ -8,7 +8,7 @@
 // Expected CSV columns: "First Name", "Last Name", "Email", "Invite Group"
 // Guests with the same Invite Group number are treated as a couple/pair.
 //
-// Output is ready to paste into the GUEST_HASHES set in script.js
+// Output is ready to paste into script.js as GUEST_LOOKUP and GUEST_GROUPS.
 
 const crypto = require('crypto');
 const fs = require('fs');
@@ -23,7 +23,6 @@ function parseCSV(text) {
     console.error('CSV must have a header row and at least one data row.');
     process.exit(1);
   }
-
   const headers = parseRow(lines[0]);
   return lines.slice(1).map(line => {
     const values = parseRow(line);
@@ -40,22 +39,12 @@ function parseRow(line) {
   for (let i = 0; i < line.length; i++) {
     const ch = line[i];
     if (inQuotes) {
-      if (ch === '"' && line[i + 1] === '"') {
-        current += '"';
-        i++;
-      } else if (ch === '"') {
-        inQuotes = false;
-      } else {
-        current += ch;
-      }
-    } else if (ch === '"') {
-      inQuotes = true;
-    } else if (ch === ',') {
-      fields.push(current);
-      current = '';
-    } else {
-      current += ch;
-    }
+      if (ch === '"' && line[i + 1] === '"') { current += '"'; i++; }
+      else if (ch === '"') { inQuotes = false; }
+      else { current += ch; }
+    } else if (ch === '"') { inQuotes = true; }
+    else if (ch === ',') { fields.push(current); current = ''; }
+    else { current += ch; }
   }
   fields.push(current);
   return fields;
@@ -90,18 +79,27 @@ for (const row of rows) {
   groups[group].push(row);
 }
 
-console.log('// Paste these into GUEST_HASHES in script.js:\n');
-
+// Output GUEST_GROUPS
+console.log('  const GUEST_GROUPS = {');
 for (const [groupId, members] of Object.entries(groups)) {
-  const labels = members.map(m => `${m[fnCol]} ${m[lnCol]}`).join(' & ');
-  console.log(`    // Group ${groupId}: ${labels}`);
+  const names = members.map(m => `${m[fnCol]} ${m[lnCol]}`.trim());
+  console.log(`    '${groupId}': { names: [${names.map(n => `'${n}'`).join(', ')}] },`);
+}
+console.log('  };\n');
+
+// Output GUEST_LOOKUP (hash -> groupId)
+console.log('  const GUEST_LOOKUP = {');
+for (const [groupId, members] of Object.entries(groups)) {
+  const labels = members.map(m => `${m[fnCol]} ${m[lnCol]}`.trim());
+  console.log(`    // Group ${groupId}: ${labels.join(' & ')}`);
   for (const member of members) {
     const fullName = `${member[fnCol]} ${member[lnCol]}`.trim();
     const email = member[emailCol];
-    if (fullName) console.log(`    '${hash(fullName)}',`);
-    if (email) console.log(`    '${hash(email)}',`);
+    if (fullName) console.log(`    '${hash(fullName)}': '${groupId}',`);
+    if (email) console.log(`    '${hash(email)}': '${groupId}',`);
   }
 }
+console.log('  };');
 
 const total = Object.values(groups).reduce((sum, g) => sum + g.length, 0);
-console.log(`\n// ${total} guests in ${Object.keys(groups).length} invite groups`);
+console.log(`\n  // ${total} guests in ${Object.keys(groups).length} invite groups`);
