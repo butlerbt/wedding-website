@@ -404,6 +404,12 @@ h2 {
   display: none !important;
 }
 
+.field-error {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
 .rsvp-success {
   text-align: center;
   padding: 3rem 0;
