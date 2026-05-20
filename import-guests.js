@@ -13,8 +13,20 @@
 const crypto = require('crypto');
 const fs = require('fs');
 
+const ENC_SALT = 'natalie-brent-2027-rsvp';
+
 function hash(val) {
   return crypto.createHash('sha256').update(val.trim().toLowerCase()).digest('hex');
+}
+
+function encryptNames(names) {
+  const key = crypto.createHash('sha256').update(ENC_SALT).digest();
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
+  let encrypted = cipher.update(JSON.stringify(names), 'utf8');
+  encrypted = Buffer.concat([encrypted, cipher.final()]);
+  const tag = cipher.getAuthTag();
+  return Buffer.concat([iv, encrypted, tag]).toString('base64');
 }
 
 function parseCSV(text) {
@@ -79,19 +91,19 @@ for (const row of rows) {
   groups[group].push(row);
 }
 
-// Output GUEST_GROUPS
+// Output GUEST_GROUPS (AES-256-GCM encrypted)
 console.log('  const GUEST_GROUPS = {');
 for (const [groupId, members] of Object.entries(groups)) {
   const names = members.map(m => `${m[fnCol]} ${m[lnCol]}`.trim());
-  console.log(`    '${groupId}': { names: [${names.map(n => `'${n}'`).join(', ')}] },`);
+  console.log(`    '${groupId}': '${encryptNames(names)}',`);
 }
 console.log('  };\n');
 
 // Output GUEST_LOOKUP (hash -> groupId)
 console.log('  const GUEST_LOOKUP = {');
 for (const [groupId, members] of Object.entries(groups)) {
-  const labels = members.map(m => `${m[fnCol]} ${m[lnCol]}`.trim());
-  console.log(`    // Group ${groupId}: ${labels.join(' & ')}`);
+  const firstNames = members.map(m => m[fnCol].trim());
+  console.log(`    // Group ${groupId}: ${firstNames.join(' & ')}`);
   for (const member of members) {
     const fullName = `${member[fnCol]} ${member[lnCol]}`.trim();
     const email = member[emailCol];

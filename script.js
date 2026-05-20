@@ -7,36 +7,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const GUEST_GROUPS = {
-    '1': { names: ['Sam Bennett', 'Gisela Bennett'] },
-    '2': { names: ['Susan Butler'] },
-    '3': { names: ['Stephanie Harwood', 'Will Harwood'] },
-    '4': { names: ['Alan Butler', 'Amelia Height'] },
-    '5': { names: ['Bob Butler'] },
-    '6': { names: ['Christoph von Ruexleben', 'Jenn Cizek'] },
-    '7': { names: ['Clare Gallagher', 'LT Nickell'] },
-    '8': { names: ['Anna Callahan', 'Mike Coyle'] },
-    '9': { names: ['Will Buckner'] },
-    '10': { names: ['Jesse Pine', 'Hannah Pine'] },
-    '11': { names: ['Grace Carpenter', 'Jonathan McLaren'] },
-    '12': { names: ['Zach Lovell', 'Syd Knadler'] },
-    '13': { names: ['Alex Pollard Lipkis', 'Victoria Arling'] },
-    '14': { names: ['Angelina DiFransesco'] },
-    '15': { names: ['Keith Mody', 'CC Canepa'] },
-    '16': { names: ['Sean Kuusinen', 'Maggie Kuusinen'] },
-    '17': { names: ['Zander Buteaux'] },
-    '18': { names: ['Jeff Dobroni', 'Sam Wilits'] },
-    '19': { names: ['Eva Krechova'] },
-    '20': { names: ['Kirill Langer'] },
-    '21': { names: ['Steve Griffin', 'Taylor Griffin'] },
-    '22': { names: ['Jared Carlson', 'Hannah Bare'] },
-    '23': { names: ['David Alexander', 'Zoe'] },
-    '24': { names: ['Rick Cotton'] },
-    '25': { names: ['Laura Boese', 'Arne Boese'] },
-    '26': { names: ['Julianna Burrill'] },
-    '27': { names: ['Ethan Harden', 'Natalie Harden'] },
-    '28': { names: ['Tommy Joyce', 'Brit Joyce'] },
-    '29': { names: ['Sarah Yeung', 'Cam Eibl'] },
-    '30': { names: ['Andre Shprengel'] },
+    '1': 'iQPT36OQHk9DF3PZhTTtrkSVqaMpICE6TmP6F941TYDbkmGwkOMFy2ho39d8lh+xWVkoA9pqRraoFLI7',
+    '2': 'fZI4U+AG500qzpmGR1IXaiidkiwyDrhImxHGIy8a4T6FmREdJrUQ7iyFQ78=',
+    '3': '0YfxTUadVaxjvCsPXILfmMHPxQDVmlR/vLq2kJzQObU/rYlegE9MLrAc7ntiMk2LRfQQM+Kj02KgZeAE8m12Uw==',
+    '4': 'tHBrTGk6gKRyW6f4OKGVqGAbBP+gTK1o1Zmh1bynhK1anCWCtnhJCy3WMxdAzgT+Vie3VwfWcGzyfns=',
+    '5': 'RfxYBsYzZtAXeMJH0NX5/312rRrk4e9ZzsL4gpgamZt31oihQYUyaZ20',
+    '6': 'jMzch2zSO0KysJCg7TCz/WVdhvY29DegPVnX+HMfwhsNrLL3TelPTBhWPoLxhAnRHJPFKA9oScv04INW5Ozlks+15zs=',
+    '7': 'sNIj7NYCMQo5JMWV1vS0pMfVjchQW5SA54hEiUAN39cI87ttHXSQqm3WtAcZZ1yaauC5f3HxbQ8emKRr',
+    '8': 'cKyMqz/swbxDYzCJ7UzO+LUb2lzW5KhdUsawkYvP0Pk5MKVGykRD8jl8j0UJDnuBBMgpmcpnhRAEeQ==',
+    '9': 'kXgel2s7TLrUIbkOMyvgZ71M+5GftbNuU4UFvW3sM2Dv/wXluGiX1mKQJ4c=',
+    '10': 'VQDUIaXlS8jU1dBlK641CpLe+SPEFbfwc0kAVRz6hSR5lqMsc5eNnjUr4Je+45HzoYTR9XFKAhE=',
+    '11': '0gdi/7Raelhx7dqhunZMsF9IbBiT4S/jIWzrigls1qn8G9ssMx4kDYUM8EugBFPWbLd7KigsJla2TK4wq/UlhWrH',
+    '12': 'Mim46IZnWt8LVO/29fDrVwRuTzjJNqVxGplUoSP8F3a2DsFKYE6bxa59dJti3rBXUUmOOEW4S63N',
+    '13': 'RaSDxYIx2MTXQAbF6b4lbcVON860KHj+Nl3kLazBpeowdH+1heRDS3aKRIj0YA2Q5QIZDEyCRKLFYRaMDi1iz55WESvv',
+    '14': 'mnDCwgNNPJuHV9cFQr+bkvic20O7gNhacAa6rhQgJCemuQjKAAqsNGGkBEuhZahmkkH8tQ==',
+    '15': 'QxGjG0CYPgCg7trl49ZdIY39zZSRmylXiwnQpaqJPbBz29ud1xqhKfpdAvedB8L32hVrpvr+',
+    '16': 'FhJRqEV/lGncJ71DKhnQBIIJ42746qpvrtrxK2Bcdqe7gY92+ErtcLgsn23aqv4CEe/A4KJGE2gelnqpmvad',
+    '17': 'yexraFeRhzPZJWpTJqt40OjDyozHMkNN5f80UC4o1rk5tkH7hDm6hVl1R6QMCw==',
+    '18': 'hhLecnNvBZxyP/u5B4YaV2EKG4R0EjwubK7o/LfKnqF5ne/QtDoO1dF8RDpKf6WGxx77y8cvkzct',
+    '19': '/0swvyZcKPGXtVkOI/ssQCDl+bz4pAhUgmDKBrDMFkUaf19LA2X8RnD+FBY=',
+    '20': 'BtWd+ICbXpgLdHGbCHdYJpvGyc5U80jGsRJOurPxBRW0C/u33MmOHPeQrdJL',
+    '21': 'ms2HsiNAiwzT2myLNMFEeZSXz+tXvfcLLl9ciTc7y/vBFrQdqFjbmjUurB9viK7wWtbkyhbabI3vTH2UYUc=',
+    '22': '3HDiytiozRGtccDwgQT9h6okpPNb0n8RGZu0REuBunDz6ZMAH30eURKpHcwCPHyD/0wL4aenpD0Bbz4=',
+    '23': 'io9hfnkwvRzP8sXXXo5g/2zss9RHZLM9U3wPwXxO1fLZks/sebudioTt8iU8tc97GuPr9kU=',
+    '24': '1mpvXhhf4WOJzIcm+fNV8rKav6dOEpbu4ppKedh8d8BwrjyOO/rDae04tg==',
+    '25': 'yYEv4u8pBAV8osvUIcw1vDc/5R8tKI03JYJBzSYOVGfsSsGCBWCfpbDYVXBQ52TO6jk12nO6yzo=',
+    '26': '6N3Mtq6/ZB1/3qTD6ryXGyu/J3JFekBgrkVqI6/RFJU7a5DDr38EN7KYZpQb9/cX',
+    '27': '7PjaUe6qZ1ejSDvDhUm+Wd1T9ZxkqyZTVPPz+cDZqgrgMwENRHevct+A5GA5iHqxqERmnVpk781QGMWmbg==',
+    '28': 'a66x6D8JXC4eeeSXYQw1wUBGcrV2/7n5tzC053vkgy1xPtw0thbvEUb6riXU3lpjMrnPeB3qJmA=',
+    '29': 'CB7fb4CBY4Ylz+kb/skLB5cialavan+qs9sZ1z/KOkw10MxPXIlRPNGoFE1kRTze8tWlXgKS',
+    '30': 'KZharCGlyQbdeq8mVu7DcpgQsTKlEyLYldychfV18H4/WUaa7XqGajGlpyfJ8kA=',
   };
 
   const GUEST_LOOKUP = {
@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
     '04beb016ea409211c0c7f67d907f720fe00b92a0ea057ce44d090f918a40de6f': '30',
   };
 
+  const _ENC_SALT = 'natalie-brent-2027-rsvp';
+
   async function hashValue(val) {
     const normalized = val.trim().toLowerCase();
     const encoded = new TextEncoder().encode(normalized);
@@ -178,12 +180,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
+  async function decryptNames(encBase64) {
+    const raw = Uint8Array.from(atob(encBase64), c => c.charCodeAt(0));
+    const iv = raw.slice(0, 12);
+    const payload = raw.slice(12);
+    const keyData = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(_ENC_SALT));
+    const key = await crypto.subtle.importKey('raw', keyData, 'AES-GCM', false, ['decrypt']);
+    const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, payload);
+    return JSON.parse(new TextDecoder().decode(dec));
+  }
+
   async function findGroup(input) {
     if (!GUEST_LOOKUP || Object.keys(GUEST_LOOKUP).length === 0) return null;
     const h = await hashValue(input);
     const groupId = GUEST_LOOKUP[h];
     if (!groupId) return null;
-    return { id: groupId, ...GUEST_GROUPS[groupId] };
+    const names = await decryptNames(GUEST_GROUPS[groupId]);
+    return { id: groupId, names };
   }
 
   // ── RSVP Form ──
