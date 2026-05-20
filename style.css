@@ -6,17 +6,17 @@
 }
 
 :root {
-  --color-bg: #faf9f6;
-  --color-text: #3a3a3a;
-  --color-accent: #8b7355;
-  --color-accent-light: #c4a97d;
-  --color-accent-dark: #6b5740;
-  --color-muted: #7a7a7a;
-  --color-border: #e8e4de;
-  --color-card: #ffffff;
-  --color-section-alt: #f4f1eb;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Montserrat', -apple-system, sans-serif;
+  --color-bg: #f2ead8;
+  --color-text: #1e1e1e;
+  --color-accent: #8b2a1a;
+  --color-accent-light: #c4593f;
+  --color-accent-dark: #6b1e12;
+  --color-muted: #6b5d50;
+  --color-border: #d4c9b5;
+  --color-card: #faf5eb;
+  --color-section-alt: #e8dece;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Raleway', -apple-system, sans-serif;
 }
 
 html {
@@ -39,7 +39,7 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(250, 249, 246, 0.92);
+  background: rgba(242, 234, 216, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   transition: box-shadow 0.3s;
@@ -79,7 +79,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #e8ddd3 0%, #d4c5b0 50%, #c4b8a0 100%);
+  background: url('images/hero-cropped.png') center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -87,15 +87,21 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
+  background: rgba(242, 234, 216, 0.75);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.15);
+  display: none;
 }
 
 .hero-content {
@@ -105,37 +111,40 @@ body {
 }
 
 .hero-pretext {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--color-text);
   margin-bottom: 1rem;
 }
 
 .couple-names {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 7rem);
+  font-size: clamp(4rem, 12vw, 9rem);
   font-weight: 400;
-  color: var(--color-accent-dark);
-  line-height: 1.1;
+  color: var(--color-accent);
+  line-height: 0.95;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .hero-subtext {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-style: italic;
+  font-weight: 300;
   color: var(--color-muted);
   margin-bottom: 2rem;
 }
 
 .wedding-date .date-line {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: 0.2em;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--color-text);
 }
 
 .countdown {
@@ -170,19 +179,20 @@ body {
   display: inline-block;
   padding: 0.85rem 2.5rem;
   border: 2px solid var(--color-accent);
-  color: var(--color-accent-dark);
+  color: #fff;
+  background: var(--color-accent);
   text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s;
-  background: transparent;
   cursor: pointer;
 }
 
 .btn:hover {
-  background: var(--color-accent);
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
   color: #fff;
 }
 
@@ -212,10 +222,12 @@ body {
 
 h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 400;
   text-align: center;
-  color: var(--color-accent-dark);
+  color: var(--color-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
@@ -254,9 +266,11 @@ h2 {
 
 .detail-card h3 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-accent-dark);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
 
@@ -420,9 +434,11 @@ h2 {
 
 .guest-card h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-accent-dark);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
@@ -471,9 +487,11 @@ h2 {
 .faq-item summary {
   padding: 1.25rem 0;
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-accent-dark);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -508,19 +526,22 @@ h2 {
 footer {
   text-align: center;
   padding: 4rem 1.5rem;
-  background: var(--color-accent-dark);
+  background: var(--color-text);
   color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-names {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 0.25rem;
 }
 
 .footer-date {
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
