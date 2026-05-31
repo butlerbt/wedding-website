@@ -79,7 +79,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  background: url('images/hero-cropped.png') center/cover no-repeat;
+  background: url('images/hero-cropped.png') center 30%/cover no-repeat;
   overflow: hidden;
 }
 
