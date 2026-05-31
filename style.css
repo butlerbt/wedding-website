@@ -74,12 +74,12 @@ body {
 /* ── Hero ── */
 .hero {
   position: relative;
-  height: 500px;
+  min-height: 90vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  background: url('images/hero-cropped.png') top center/cover no-repeat;
+  background: var(--color-bg) url('images/hero-cropped.png') center/contain no-repeat;
   overflow: hidden;
 }
 
