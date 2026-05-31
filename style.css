@@ -8,9 +8,9 @@
 :root {
   --color-bg: #f2ead8;
   --color-text: #1e1e1e;
-  --color-accent: #8b2a1a;
-  --color-accent-light: #c4593f;
-  --color-accent-dark: #6b1e12;
+  --color-accent: #722f37;
+  --color-accent-light: #9b4d55;
+  --color-accent-dark: #501e24;
   --color-muted: #6b5d50;
   --color-border: #d4c9b5;
   --color-card: #faf5eb;
@@ -76,7 +76,7 @@ body {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   background: url('images/hero-cropped.png') center/cover no-repeat;
@@ -87,7 +87,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(242, 234, 216, 0.75);
+  background: rgba(242, 234, 216, 0.55);
 }
 
 .hero::after {
@@ -107,7 +107,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 2rem;
+  padding: 2rem 2rem 8rem;
 }
 
 .hero-pretext {
@@ -121,7 +121,7 @@ body {
 
 .couple-names {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(3rem, 9vw, 7rem);
   font-weight: 400;
   color: var(--color-accent);
   line-height: 0.95;
@@ -136,13 +136,20 @@ body {
   font-style: italic;
   font-weight: 300;
   color: var(--color-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.wedding-date {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 0.75rem;
 }
 
 .wedding-date .date-line {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--color-text);
 }
@@ -291,6 +298,179 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* ── Content Prose (text-heavy sections) ── */
+.content-prose {
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+}
+
+.content-prose p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.content-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 2rem 0 0.75rem;
+}
+
+.prose-heading:first-child {
+  margin-top: 0;
+}
+
+.map-placeholder {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 1.5rem;
+  border: 1px dashed var(--color-border);
+  margin: 1rem 0;
+}
+
+/* ── Itinerary List ── */
+.itinerary-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+}
+
+.itinerary-list li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.itinerary-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Packing List ── */
+.packing-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.packing-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.packing-list li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* ── Cost Summary ── */
+.cost-summary {
+  text-align: center;
+}
+
+.cost-summary p {
+  font-size: 1.1rem;
+}
+
+/* ── What to Expect / Practical sections ── */
+#expect .detail-card,
+#practical .detail-card,
+#itinerary .detail-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#expect .detail-icon,
+#expect .detail-card h3,
+#practical .detail-icon,
+#practical .detail-card h3,
+#itinerary .detail-icon,
+#itinerary .detail-card h3 {
+  text-align: center;
+}
+
+#expect .detail-card p,
+#practical .detail-card p,
+#itinerary .detail-card p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── Travel section ── */
+#travel .detail-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#travel .detail-icon,
+#travel .detail-card h3 {
+  text-align: center;
+}
+
+#travel .detail-card p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+#travel .detail-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.travel-list,
+.travel-links {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.travel-list li {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.travel-links {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.travel-links li {
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.travel-links li:last-child {
+  margin-bottom: 0;
+}
+
+.travel-note {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(0, 0, 0, 0.02);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
 .map-link {
   color: var(--color-accent);
   text-decoration: none;
@@ -308,11 +488,11 @@ h2 {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
   gap: 1rem;
 }
 
 .gallery-item {
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -320,6 +500,11 @@ h2 {
   background-size: cover;
   background-position: center;
   transition: transform 0.3s;
+  border-radius: 4px;
+}
+
+.gallery-item.portrait {
+  grid-row: span 2;
 }
 
 .gallery-item:hover {
