@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '14': 'mnDCwgNNPJuHV9cFQr+bkvic20O7gNhacAa6rhQgJCemuQjKAAqsNGGkBEuhZahmkkH8tQ==',
     '15': 'QxGjG0CYPgCg7trl49ZdIY39zZSRmylXiwnQpaqJPbBz29ud1xqhKfpdAvedB8L32hVrpvr+',
     '16': 'FhJRqEV/lGncJ71DKhnQBIIJ42746qpvrtrxK2Bcdqe7gY92+ErtcLgsn23aqv4CEe/A4KJGE2gelnqpmvad',
-    '17': 'yexraFeRhzPZJWpTJqt40OjDyozHMkNN5f80UC4o1rk5tkH7hDm6hVl1R6QMCw==',
+    '17': '5KFYsxN1RSi8p4VBQAga4P0Z21GQl/6U9w+ocrIKhpy+qjsf+iBW2Q0lFWlx',
     '18': 'hhLecnNvBZxyP/u5B4YaV2EKG4R0EjwubK7o/LfKnqF5ne/QtDoO1dF8RDpKf6WGxx77y8cvkzct',
     '19': '/0swvyZcKPGXtVkOI/ssQCDl+bz4pAhUgmDKBrDMFkUaf19LA2X8RnD+FBY=',
     '20': 'BtWd+ICbXpgLdHGbCHdYJpvGyc5U80jGsRJOurPxBRW0C/u33MmOHPeQrdJL',
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '0174c265aba0e3a996903c85dc3af2fade292abdcdc0d618e4e387a31c8ed200': '16',
     'd9673ea21de30d57b90612f91b9294591d6fd7ed859cf7ed81f16c3ef55ebbab': '16',
     // Group 17: Zander
-    '8ada383622bd32aa25dfe1c9ac30ce50d33b02ee4a0c99c8377470ce0d0ee7a4': '17',
+    '8eefebc6bd17e79b988490f2373f99a2c809e73bcd11b07380348d9e05653fe1': '17',
     '86f26aeb8681b44aedf720d9ac9895e33e972ae852fddb0f1d3a9adc1fd33001': '17',
     // Group 18: Jeff & Sam
     '1079e3c338410b345fef5416a48bd10d8c1de4d4b238b6a58228d1e7894c3556': '18',
