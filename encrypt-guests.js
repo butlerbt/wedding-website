@@ -26,7 +26,7 @@ const GUEST_GROUPS = {
   '14': { names: ['Angelina DiFransesco'] },
   '15': { names: ['Keith Mody', 'CC Canepa'] },
   '16': { names: ['Sean Kuusinen', 'Maggie Kuusinen'] },
-  '17': { names: ['Zander Buteaux'] },
+  '17': { names: ['Zander Buteux'] },
   '18': { names: ['Jeff Dobroni', 'Sam Wilits'] },
   '19': { names: ['Eva Krechova'] },
   '20': { names: ['Kirill Langer'] },
