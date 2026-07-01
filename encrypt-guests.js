@@ -28,7 +28,7 @@ const GUEST_GROUPS = {
   '16': { names: ['Sean Kuusinen', 'Maggie Kuusinen'] },
   '17': { names: ['Zander Buteux'] },
   '18': { names: ['Jeff Dobroni', 'Sam Wilits'] },
-  '19': { names: ['Eva Krechova'] },
+  '19': { names: ['Eva Krchova'] },
   '20': { names: ['Kirill Langer'] },
   '21': { names: ['Steve Griffin', 'Taylor Griffin'] },
   '22': { names: ['Jared Carlson', 'Hannah Bare'] },
