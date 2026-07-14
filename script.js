@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '17': '5KFYsxN1RSi8p4VBQAga4P0Z21GQl/6U9w+ocrIKhpy+qjsf+iBW2Q0lFWlx',
     '18': 'hhLecnNvBZxyP/u5B4YaV2EKG4R0EjwubK7o/LfKnqF5ne/QtDoO1dF8RDpKf6WGxx77y8cvkzct',
     '19': 'Br+vIGxtfk4csij58gmjYqXEfwyPQImm3KKdmNqMBuvj92jnHw+z7a4OrA==',
-    '20': 'BtWd+ICbXpgLdHGbCHdYJpvGyc5U80jGsRJOurPxBRW0C/u33MmOHPeQrdJL',
+    '20': '33vI0vg7OfJ2LDt5Hgfr/+She4ll79lI74IbFPXkoHS2NrY2d5B7dspNbwHaYqt5VteNId7uLgGREpks',
     '21': 'ms2HsiNAiwzT2myLNMFEeZSXz+tXvfcLLl9ciTc7y/vBFrQdqFjbmjUurB9viK7wWtbkyhbabI3vTH2UYUc=',
     '22': '3HDiytiozRGtccDwgQT9h6okpPNb0n8RGZu0REuBunDz6ZMAH30eURKpHcwCPHyD/0wL4aenpD0Bbz4=',
     '23': 'io9hfnkwvRzP8sXXXo5g/2zss9RHZLM9U3wPwXxO1fLZks/sebudioTt8iU8tc97GuPr9kU=',
@@ -123,9 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Group 19: Eva
     '099a51c38280e3915626096cea7f739413b3e0446069eb978d3b81aa17efcc34': '19',
     'a72ba1a40164e32b0bfc508fb94a4c2c057e2ab3f0c668f4fe4f2fa3c7e47e6c': '19',
-    // Group 20: Kirill
+    // Group 20: Kirill & Asuka
     '3211e04054503a80f8783144b8307019be31d7ca85fc1fb41b72987840f610b8': '20',
     '900b83f74d6e3403c4349fe4fd1703c2c137c7c2a8b6500d06f4a2b4a8b389bf': '20',
+    '1957c35e5ab634736d35463a43fbeede20ea7230892dc854d2edc14af821df3f': '20',
+    'c50687e9a6020bc8aeeeadc4342031aa4206d83905606eae9a5f50e8a25c7029': '20',
     // Group 21: Steve & Taylor
     'a831c1567473507cc7c0db3253adedb452965201cd7489a65743c749e0a51764': '21',
     '2383bd979def3e020c375ac2b3123182c60e4af7b5d48d042d167c7fb44f3f44': '21',

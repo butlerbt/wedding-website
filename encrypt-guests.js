@@ -29,7 +29,7 @@ const GUEST_GROUPS = {
   '17': { names: ['Zander Buteux'] },
   '18': { names: ['Jeff Dobroni', 'Sam Wilits'] },
   '19': { names: ['Eva Krchova'] },
-  '20': { names: ['Kirill Langer'] },
+  '20': { names: ['Kirill Langer', 'Asuka Nosaka'] },
   '21': { names: ['Steve Griffin', 'Taylor Griffin'] },
   '22': { names: ['Jared Carlson', 'Hannah Bare'] },
   '23': { names: ['David Alexander', 'Zoe'] },
