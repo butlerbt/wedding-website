@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '28': 'a66x6D8JXC4eeeSXYQw1wUBGcrV2/7n5tzC053vkgy1xPtw0thbvEUb6riXU3lpjMrnPeB3qJmA=',
     '29': 'CB7fb4CBY4Ylz+kb/skLB5cialavan+qs9sZ1z/KOkw10MxPXIlRPNGoFE1kRTze8tWlXgKS',
     '30': 'KZharCGlyQbdeq8mVu7DcpgQsTKlEyLYldychfV18H4/WUaa7XqGajGlpyfJ8kA=',
+    '31': 'MNrDVd9gC0dEJvhUO52jWvBTgsb3sxBpqrHFvO/DYyIB+1GlwhepGfg4exkm1rYT9iML5Pb4K2AD/QkbhqIBMHQ=',
   };
 
   const GUEST_LOOKUP = {
@@ -171,6 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Group 30: Andre
     'a3604df3ffb57a4cb199d2ebd7aefd3ede18c6332507d1e4c0971589cc0ba180': '30',
     '04beb016ea409211c0c7f67d907f720fe00b92a0ea057ce44d090f918a40de6f': '30',
+    // Group 31: Taylor & Alex
+    '966a886710e0411895971d94f9fa9fb1de278636d89a38208f3399caf8c86701': '31',
+    '4b77f65f66e2ebfae91020208db86be737c8837b106de9dc90b3dea066129942': '31',
+    '480aa37e92d4a3612adda08fa154cb941fdf4b269610ac931b21a384e3f29878': '31',
+    'e52699d6815c6d3bed6bab34b5d8bb24d6b694d989333973337abab8cca88e29': '31',
   };
 
   const _ENC_SALT = 'natalie-brent-2027-rsvp';

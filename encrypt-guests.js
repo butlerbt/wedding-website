@@ -40,6 +40,7 @@ const GUEST_GROUPS = {
   '28': { names: ['Tommy Joyce', 'Brit Joyce'] },
   '29': { names: ['Sarah Yeung', 'Cam Eibl'] },
   '30': { names: ['Andre Shprengel'] },
+  '31': { names: ['Taylor Carpenter', 'Alex Carpenter'] },
 };
 
 function encrypt(names) {
